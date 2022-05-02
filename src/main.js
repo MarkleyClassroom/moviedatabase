@@ -1,8 +1,26 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-Vue.config.productionTip = false
+
+import VueRouter from 'vue-router'
+
+
+
+import HomePage from './components/HomePage'
+import MoviesDb from './components/MoviesDb'
+import MovieDetail from './components/MovieDetail'
+Vue.use(VueRouter)
+
+const router = new VueRouter({
+  routes: [
+    {path: "/", component:HomePage},
+    {path: "/movies", component:MoviesDb},
+    {path:"/movies/:id", component:MovieDetail}
+
+],
+  mode:'history'
+})
 
 new Vue({
-  render: h => h(App),
+  render: h => h(App),router
 }).$mount('#app')
