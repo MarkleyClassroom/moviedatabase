@@ -9,6 +9,8 @@ import VueRouter from 'vue-router'
 import HomePage from './components/HomePage'
 import MoviesDb from './components/MoviesDb'
 import MovieDetail from './components/MovieDetail'
+import axios from 'axios'
+Vue.prototype.$http = axios
 Vue.use(VueRouter)
 
 const router = new VueRouter({
