@@ -12,7 +12,7 @@
 
 <script>
 
-
+import axios from axios
 export default {
     name: "MoviesDb",
     data(){
@@ -22,7 +22,7 @@ export default {
     }, 
     mounted()
     {
-        this.$http.get("https://api.themoviedb.org/3/movie/top_rated?api_key=70ef7c62eee1244489c96681175a2a0f&language=en-US&page=1")
+        axios.get("")
         .then( (response)=> {
             this.movies = response.data.results;
         })
